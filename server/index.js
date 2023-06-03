@@ -12,7 +12,8 @@ require('dotenv').config();
 
 // connect to db
 mongoose.connect('mongodb://' + process.env.DB_USER + ':' + process.env.DB_PASS + '@' + process.env.DB_HOST + ':' + process.env.DB_PORT + '/ngodb?authSource=admin', {
-	useNewUrlParser: true
+	useNewUrlParser: true,
+	useUnifiedTopology: true
 }).then(
 	() => console.log(chalk.yellow('Connected to mongo database at bukola.xyz')),
 	err => console.log(chalk.red(err))
